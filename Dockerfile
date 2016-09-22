@@ -11,9 +11,9 @@ RUN apk -U add ca-certificates \
     && wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
     && unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
     && mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin \
-    && rm -r /tmp/rclone* \
-    && addgroup rclone \
-    && adduser -h /config -s /bin/ash -G rclone -D rclone
+    && rm -r /tmp/rclone*
+    #&& addgroup rclone \
+    #&& adduser -h /config -s /bin/ash -G rclone -D rclone
 
 #Create the HTS user (1000), and add to user group (100)
 RUN addgroup rclone -g 100
