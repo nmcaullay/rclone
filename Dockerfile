@@ -16,8 +16,8 @@ RUN apk -U add ca-certificates \
     #&& adduser -h /config -s /bin/ash -G rclone -D rclone
 
 #Create the HTS user (1000), and add to user group (100)
-RUN addgroup rclone -g 100
-RUN adduser -s /bin/ash -G rclone -D rclone
+#RUN addgroup rclone -g 100
+RUN adduser -s /bin/ash -g 100 -D rclone -u 1001
 
 USER rclone
 
