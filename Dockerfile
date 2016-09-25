@@ -22,6 +22,7 @@ RUN adduser -s /bin/ash -g 100 -D rclone -u 1001
 USER rclone
 
 VOLUME ["/config"]
+VOLUME ["/files"]
 
 ENTRYPOINT ["/usr/bin/rclone"]
 
