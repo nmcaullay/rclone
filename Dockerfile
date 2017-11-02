@@ -9,7 +9,8 @@ RUN apk -U add ca-certificates \
     && rm -rf /var/cache/apk/* \
     && cd /tmp \
     && wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
-    && unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
+    ##&& unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip \
+    && unzip /tmp/rclone-current-linux-${ARCH}.zip \
     && mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin \
     && rm -r /tmp/rclone*
     #&& addgroup rclone \
