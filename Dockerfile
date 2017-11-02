@@ -5,10 +5,14 @@ MAINTAINER nmcaullay <nmcaullay@gmail.com>
 ENV RCLONE_VERSION=current
 ENV ARCH=amd64
 
+RUN   apk update \                                                                                                                                                                                                                        
+&&   apk add ca-certificates wget \                                                                                                                                                                                                      
+&&   update-ca-certificates    
+
 RUN apk -U add ca-certificates
 RUN rm -rf /var/cache/apk/*
 RUN cd /tmp
-RUN wget -q https://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
+RUN wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
 RUN unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
 RUN mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin
 RUN rm -r /tmp/rclone*
