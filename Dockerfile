@@ -18,14 +18,14 @@ RUN unzip -d /tmp /tmp/rclone.zip
 #RUN mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin
 #RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin
 RUN cp /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin/
-RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /tmp/
+#RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /tmp/
 RUN rm -r /tmp/rclone*
     #&& addgroup rclone \
     #&& adduser -h /config -s /bin/ash -G rclone -D rclone
 
 #Create the HTS user (1000), and add to user group (100)
 #RUN addgroup rclone -g 100
-RUN adduser -s /bin/ash -g 100 -D rclone -u 1001
+RUN adduser -s /bin/ash -g 100 -D rclone -u 1005
 
 USER rclone
 
