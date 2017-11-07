@@ -16,7 +16,9 @@ RUN wget -q -O /tmp/rclone.zip http://downloads.rclone.org/rclone-${RCLONE_VERSI
 #RUN unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
 RUN unzip /tmp/rclone.zip
 #RUN mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin
-RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin
+#RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin
+RUN cp /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin/
+RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /tmp/
 RUN rm -r /tmp/rclone*
     #&& addgroup rclone \
     #&& adduser -h /config -s /bin/ash -G rclone -D rclone
