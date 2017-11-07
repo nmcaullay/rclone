@@ -14,7 +14,7 @@ RUN rm -rf /var/cache/apk/*
 RUN cd /tmp
 RUN wget -q -O /tmp/rclone.zip http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
 #RUN unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
-RUN unzip /tmp/rclone.zip
+RUN unzip -d /tmp /tmp/rclone.zip
 #RUN mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin
 #RUN mv /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin
 RUN cp /tmp/rclone-v1.38-linux-amd64/rclone /usr/bin/
